@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorChildOdd">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPurple">
+
+        <ImageView
+            android:id="@+id/img_detail_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_sign_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="设备详情"
+            android:textColor="@color/colorWhite"
+            android:textSize="22sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/colorChildEven">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:text="  IMEI  :"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_detail_imei"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="2133454235235334235"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/colorChildOdd">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:text="  型号  :"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_detail_model"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="HTC ONE X"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/colorChildEven">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:text="  系统  :"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_detail_os"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="4.0.3"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/colorChildOdd">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:text="  CPU  :"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_detail_cpu"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="八核"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/colorChildEven">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:text="分辨率:"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_detail_resolution"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="720*1080"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/colorChildOdd">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:text="运行内存:"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_detail_memory"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="16GB"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:text="存储空间:"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_detail_storage"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="16GB"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/colorChildEven">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:text="责任人:"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_detail_responsible"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="张三"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/colorChildOdd">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:text="  来源  :"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_detail_source"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="厂商"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_detail_manufacturer"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="50dp"
+                android:text="厂商名:"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/txt_detail_manufacturername"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="小米"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/colorChildEven">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:text="  状态  :"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_detail_state"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="未还"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center">
+
+        <com.example.baidu.oemequipmentsystem.equip.ui.custom.SpinnerButton
+            android:id="@+id/btn_detail_change_responsible"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/btn_selector_main"
+            android:gravity="center"
+            android:text="更改责任人"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <com.example.baidu.oemequipmentsystem.equip.ui.custom.SpinnerButton
+            android:id="@+id/btn_detail_change_manufacturer"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/btn_selector_main"
+            android:gravity="center"
+            android:text="更改厂商"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:visibility="gone"/>
+
+        <com.example.baidu.oemequipmentsystem.equip.ui.custom.SpinnerButton
+            android:id="@+id/btn_detail_change_state"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/btn_selector_main"
+            android:gravity="center"
+            android:text="更改状态"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_detail_submit"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_selector_main"
+        android:text="提交"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp" />
+
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+apply plugin: 'com.android.library'
+
+
+dependencies {
+    compile files('libs/nineoldandroids-2.2.0.jar')
+}
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        minSdkVersion 3
+    }
+}

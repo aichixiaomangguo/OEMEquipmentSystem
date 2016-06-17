@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorTextTitle">#333333</color>
+    <color name="colorClickable">#686872</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorPurple">#142841</color>
+    <color name="colorTextHint">#666666</color>
+    <color name="colorTextAssist">#DDDDDD</color>
+    <color name="colorChildFirst">#004d6a</color>
+    <color name="colorChildOdd">#fff6e9</color>
+    <color name="colorChildEven">#ffd7aa</color>
+</resources>
