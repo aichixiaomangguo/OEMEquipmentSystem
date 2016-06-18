@@ -1,6 +1,9 @@
 package com.example.baidu.oemequipmentsystem.util;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.app.ActivityManager;
+import android.app.Dialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -8,9 +11,15 @@ import android.os.Environment;
 import android.os.StatFs;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.example.baidu.oemequipmentsystem.R;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -220,6 +229,33 @@ public class BaseUtil {
             }
         }
         return false;
+    }
+
+    /**
+     * loading_dialog
+     */
+    public static Dialog createLoadingDialog(Context context,String content) {
+
+        int density=(int)context.getResources().getDisplayMetrics().density;
+
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view= inflater.inflate(R.layout.dialog_loading, null);
+        LinearLayout layout = (LinearLayout) view.findViewById(R.id.dialog_view);
+        ImageView imageView = (ImageView) view.findViewById(R.id.img_dialog_loading);
+        TextView textView=(TextView) view.findViewById(R.id.txt_dialog_loading);
+        textView.setText(content);
+
+        ObjectAnimator objectAnimator=ObjectAnimator.ofFloat(imageView,"rotation",0f,360f);
+        objectAnimator.setDuration(1200);
+        objectAnimator.setRepeatCount(ValueAnimator.INFINITE);
+        objectAnimator.start();
+
+
+        Dialog loadingDialog = new Dialog(context, R.style.oem_dialog_style);
+        loadingDialog.setCancelable(false);
+        loadingDialog.setContentView(layout, new LinearLayout.LayoutParams(240*density,170*density));
+        return loadingDialog;
+
     }
 
 }

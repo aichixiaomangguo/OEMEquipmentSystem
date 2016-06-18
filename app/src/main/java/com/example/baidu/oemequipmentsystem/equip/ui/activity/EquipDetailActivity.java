@@ -1,6 +1,7 @@
 package com.example.baidu.oemequipmentsystem.equip.ui.activity;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -40,6 +41,7 @@ public class EquipDetailActivity extends Activity implements View.OnClickListene
     private String preResponsible,preState,preManufacturer;
     private List<ResponsibleModel> responsibleModels;
     private List<ManufacturerModel> manufacturerModels;
+    private Dialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +59,7 @@ public class EquipDetailActivity extends Activity implements View.OnClickListene
     }
 
     public void initView() {
-
+        loadingDialog=BaseUtil.createLoadingDialog(this,"设备信息修改中...");
         img_watch_back = (ImageView) findViewById(R.id.img_detail_back);
         img_watch_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,9 +172,11 @@ public class EquipDetailActivity extends Activity implements View.OnClickListene
                         state=0;
                     else
                         state=1;
+                    loadingDialog.show();
                     EquipImpl.getInstance().updateEquipInfo(txt_detail_imei.getText().toString(), txt_detail_responsible.getText().toString(), txt_detail_manufacturername.getText().toString(),state, new OnUpdateEquipInfoListener() {
                         @Override
                         public void updateEquipInfoSuccess(String isSuccess) {
+                            loadingDialog.dismiss();
                             if(isSuccess.equals("success")){
                                 Toast.makeText(EquipDetailActivity.this,"更改信息成功",Toast.LENGTH_SHORT).show();
                                 finish();

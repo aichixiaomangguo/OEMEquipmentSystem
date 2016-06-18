@@ -146,5 +146,24 @@ public class WatchEquipActivity extends Activity implements SwipeRefreshLayout.O
                 mSwipeLayout.setRefreshing(false);
             }
         });
+
+//        otherList.add(new EquipModel("2367126482","CHE2-LUL00","ANDROID 4", BaseUtil.getCPU(),"16db","20gb","1920*1080","刘准",0,"小米",0));
+//        otherList.add(new EquipModel("2367126482","CHE2-LUL00","ANDROID 4", BaseUtil.getCPU(),"16db","20gb","1920*1080","刘准",0,"小米",0));
+//        otherList.add(new EquipModel("2367126482","CHE2-LUL00","ANDROID 4", BaseUtil.getCPU(),"16db","20gb","1920*1080","刘准",0,"小米",0));
+//        otherList.add(new EquipModel("2367126482","CHE2-LUL00","ANDROID 4", BaseUtil.getCPU(),"16db","20gb","1920*1080","刘准",0,"小米",0));
+//
+//        baiduList.add(new EquipModel("2367126482","CHE2-LUL00","ANDROID 4", BaseUtil.getCPU(),"16db","20gb","1920*1080","刘准",0,"华为",0));
+//        baiduList.add(new EquipModel("2367126482","CHE2-LUL00","ANDROID 4", BaseUtil.getCPU(),"16db","20gb","1920*1080","刘准",0,"华为",0));
+//        baiduList.add(new EquipModel("2367126482","CHE2-LUL00","ANDROID 4", BaseUtil.getCPU(),"16db","20gb","1920*1080","刘准",0,"华为",0));
+//        baiduList.add(new EquipModel("2367126482","CHE2-LUL00","ANDROID 4", BaseUtil.getCPU(),"16db","20gb","1920*1080","刘准",0,"华为",0));
+//
+//
+//        if(otherList.size()!=0)
+//            otherList.add(0,new EquipModel("","","","","","","","",0,"",0));
+//        if(baiduList.size()!=0)
+//            baiduList.add(0,new EquipModel("","","","","","","","",0,"",0));
+//        expandableListAdapter.setData(baiduList,otherList);
+//
+//        mSwipeLayout.setRefreshing(false);
     }
 }

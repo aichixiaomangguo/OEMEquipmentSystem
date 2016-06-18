@@ -1,6 +1,7 @@
 package com.example.baidu.oemequipmentsystem.equip.ui.activity;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -10,7 +11,6 @@ import android.widget.Toast;
 
 import com.example.baidu.oemequipmentsystem.R;
 import com.example.baidu.oemequipmentsystem.equip.model.Impl.EquipImpl;
-import com.example.baidu.oemequipmentsystem.equip.model.entity.EquipModel;
 import com.example.baidu.oemequipmentsystem.equip.model.entity.ManufacturerModel;
 import com.example.baidu.oemequipmentsystem.equip.model.entity.ResponsibleModel;
 import com.example.baidu.oemequipmentsystem.equip.model.listener.OnManufacturerInfoListener;
@@ -28,8 +28,7 @@ public class EquipActivity extends Activity implements View.OnClickListener {
     private static final String TAG = "EquipActivity";
 
     private Button btn_add_equip, btn_watch_equip;
-    private List<EquipModel> baiduList;
-    private List<EquipModel> otherList;
+    private Dialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +42,7 @@ public class EquipActivity extends Activity implements View.OnClickListener {
         btn_watch_equip = (Button) findViewById(R.id.btn_watch_equip);
         btn_add_equip.setOnClickListener(this);
         btn_watch_equip.setOnClickListener(this);
+        loadingDialog=BaseUtil.createLoadingDialog(this,"数据正在加载...");
     }
 
     @Override
@@ -52,7 +52,7 @@ public class EquipActivity extends Activity implements View.OnClickListener {
             Toast.makeText(EquipActivity.this, "请连接网络", Toast.LENGTH_SHORT).show();
             return;
         }
-
+        loadingDialog.show();
         EquipImpl.getInstance().getResponsibleInfo(new OnResponsibleInfoListener() {
             @Override
             public void getResponsibleInfoSuccess(final List<ResponsibleModel> responsibleModels) {
@@ -78,18 +78,47 @@ public class EquipActivity extends Activity implements View.OnClickListener {
                                 startActivity(intent);
                                 break;
                         }
+                        loadingDialog.dismiss();
                     }
                 });
             }
         });
-    }
 
+//        List<ResponsibleModel> responsibleModels = new ArrayList<>();
+//        List<ManufacturerModel> manufacturerModels = new ArrayList<>();
+//
+//        responsibleModels.add(new ResponsibleModel("刘准"));
+//        responsibleModels.add(new ResponsibleModel("王宇哲"));
+//        responsibleModels.add(new ResponsibleModel("黄俊"));
+//
+//        manufacturerModels.add(new ManufacturerModel("华为"));
+//        manufacturerModels.add(new ManufacturerModel("VIVO"));
+//        manufacturerModels.add(new ManufacturerModel("小米"));
+//
+//        switch (v.getId()) {
+//            case R.id.btn_add_equip:
+//                Intent intent = new Intent(EquipActivity.this, AddEquipActivity.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putSerializable("responsible", (Serializable) responsibleModels);
+//                bundle.putSerializable("manufacturer", (Serializable) manufacturerModels);
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+//                break;
+//            case R.id.btn_watch_equip:
+//                intent = new Intent(EquipActivity.this, WatchEquipActivity.class);
+//                bundle = new Bundle();
+//                bundle.putSerializable("responsible", (Serializable) responsibleModels);
+//                bundle.putSerializable("manufacturer", (Serializable) manufacturerModels);
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+//                break;
+//        }
+    }
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             return false;
         }
         return super.onKeyDown(keyCode, event);
-
     }
 
 }

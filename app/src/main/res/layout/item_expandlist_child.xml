@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ll_child"
     android:layout_width="match_parent"
-    android:layout_height="30dp"
+    android:layout_height="40dp"
     android:paddingTop="10dp"
     android:orientation="horizontal"
     android:paddingBottom="10dp"
@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/txt_child_manufacturer"
-        android:layout_width="90dp"
+        android:layout_width="80dp"
         android:gravity="center"
         android:layout_height="match_parent"
         android:textSize="17sp"
@@ -19,16 +19,17 @@
 
     <TextView
         android:id="@+id/txt_child_model"
-        android:layout_width="90dp"
+        android:layout_width="100dp"
         android:gravity="center"
         android:layout_height="match_parent"
         android:textSize="17sp"
         android:textColor="@color/colorPurple"
+        android:singleLine="true"
         android:text="HTC oneX"/>
 
     <TextView
         android:id="@+id/txt_child_responsible"
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:gravity="center"
         android:layout_height="match_parent"
         android:textSize="17sp"
@@ -37,7 +38,7 @@
 
     <TextView
         android:id="@+id/txt_child_state"
-        android:layout_width="70dp"
+        android:layout_width="80dp"
         android:gravity="center"
         android:layout_height="match_parent"
         android:textSize="17sp"

@@ -36,7 +36,8 @@
             android:id="@+id/bicycleBrand"
             android:layout_height="100dp"
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"/>
         <Button
             android:id="@+id/btn_branddialog_submit"
             android:layout_width="match_parent"

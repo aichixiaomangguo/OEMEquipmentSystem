@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:paddingTop="10dp"
-    android:paddingBottom="5dp"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
     android:background="@color/colorChildFirst"
     android:orientation="vertical">
 
@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:gravity="center_vertical"
         android:layout_marginLeft="40dp"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textColor="@color/colorWhite"
         android:text="厂商"/>
 
