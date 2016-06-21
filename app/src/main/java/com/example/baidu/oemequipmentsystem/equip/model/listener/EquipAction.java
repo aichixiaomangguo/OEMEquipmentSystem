@@ -16,6 +16,11 @@ public interface EquipAction {
     void getResponsibleInfo(OnResponsibleInfoListener onResponsibleInfoListener);
 
     /**
+     * 删除设备的信息
+     */
+    void deleteEquipInfo(String imei,OnDeleteEquipInfoListener onDeleteEquipInfoListener);
+
+    /**
      * 查询厂商列表
      */
     void getManufacturerInfo(OnManufacturerInfoListener onManufacturerInfoListener);

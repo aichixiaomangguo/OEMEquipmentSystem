@@ -4,6 +4,7 @@ import com.example.baidu.oemequipmentsystem.equip.model.entity.EquipModel;
 import com.example.baidu.oemequipmentsystem.equip.model.entity.ManufacturerModel;
 import com.example.baidu.oemequipmentsystem.equip.model.entity.ResponsibleModel;
 import com.example.baidu.oemequipmentsystem.equip.model.entity.request.BaseRequest;
+import com.example.baidu.oemequipmentsystem.equip.model.entity.request.DeleteEquipInfoRequest;
 import com.example.baidu.oemequipmentsystem.equip.model.entity.request.SetEquipInfoRequest;
 import com.example.baidu.oemequipmentsystem.equip.model.entity.request.UpdateEquipInfoRequest;
 import com.example.baidu.oemequipmentsystem.equip.model.entity.response.BaseArrayResponse;
@@ -69,6 +70,14 @@ public class MTTApiClient {
     public void updateEquipInfo(Callback<BaseResponseModel> callback,String imei,String responsible,String manufacturer,int state){
         UpdateEquipInfoRequest request=new UpdateEquipInfoRequest(imei,responsible,manufacturer,state);
         mAPI.updateEquipInfo(request).enqueue(callback);
+    }
+
+    /**
+     * 删除设备的信息
+     */
+    public void deleteEquipInfo(Callback<BaseResponseModel> callback,String imei){
+        DeleteEquipInfoRequest request=new DeleteEquipInfoRequest(imei);
+        mAPI.deleteEquipInfo(request).enqueue(callback);
     }
 
     /**

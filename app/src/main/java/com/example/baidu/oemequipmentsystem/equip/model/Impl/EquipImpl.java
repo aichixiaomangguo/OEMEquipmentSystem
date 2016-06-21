@@ -8,6 +8,7 @@ import com.example.baidu.oemequipmentsystem.equip.model.entity.ResponsibleModel;
 import com.example.baidu.oemequipmentsystem.equip.model.entity.response.BaseArrayResponse;
 import com.example.baidu.oemequipmentsystem.equip.model.entity.response.BaseResponseModel;
 import com.example.baidu.oemequipmentsystem.equip.model.listener.EquipAction;
+import com.example.baidu.oemequipmentsystem.equip.model.listener.OnDeleteEquipInfoListener;
 import com.example.baidu.oemequipmentsystem.equip.model.listener.OnGetEquipInfoListener;
 import com.example.baidu.oemequipmentsystem.equip.model.listener.OnManufacturerInfoListener;
 import com.example.baidu.oemequipmentsystem.equip.model.listener.OnResponsibleInfoListener;
@@ -115,6 +116,22 @@ public class EquipImpl implements EquipAction {
 
             }
         });
+    }
+
+    @Override
+    public void deleteEquipInfo(String imei,final OnDeleteEquipInfoListener onDeleteEquipInfoListener) {
+
+        apiClient.deleteEquipInfo(new Callback<BaseResponseModel>() {
+            @Override
+            public void onResponse(Response<BaseResponseModel> response, Retrofit retrofit) {
+                onDeleteEquipInfoListener.deleteEquipInfoSuccess(response.body().getMsg());
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+
+            }
+        },imei);
     }
 
 }

@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/colorPurple">
+        android:background="@color/colorMain">
 
         <ImageView
             android:id="@+id/img_watch_back"
@@ -26,7 +26,7 @@
             android:layout_centerInParent="true"
             android:text="查看设备"
             android:textColor="@color/colorWhite"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <android.support.v4.widget.SwipeRefreshLayout

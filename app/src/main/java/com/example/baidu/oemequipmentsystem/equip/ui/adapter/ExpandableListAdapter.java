@@ -19,7 +19,7 @@ import java.util.List;
  * Created by zhangbinbin03 on 16/6/8.
  */
 public class ExpandableListAdapter extends BaseExpandableListAdapter{
-
+    
     private Context context;
     private String[] source = new String[] { "厂商", "自采" };
     private List<EquipModel> baiduList=new ArrayList<>();
@@ -36,7 +36,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
         this.otherList=otherList;
         notifyDataSetChanged();
     }
-
+    
     @Override
     public int getGroupCount() {
         return source.length;
@@ -110,7 +110,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
         }
 
         if(childPosition==0) {
-            childViewHolder.ll_child.setBackgroundColor(context.getResources().getColor(R.color.colorChildFirst));
+            childViewHolder.ll_child.setBackgroundColor(context.getResources().getColor(R.color.colorHead));
         }else if(childPosition%2==0)
             childViewHolder.ll_child.setBackgroundColor(context.getResources().getColor(R.color.colorChildOdd));
         else
@@ -183,15 +183,11 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
                 childViewHolder.txt_child_state.setTextColor(context.getResources().getColor(R.color.colorPurple));
             }
         }
-
         return convertView;
-
-
     }
 
     @Override
-    public boolean isChildSelectable(int groupPosition,
-                                     int childPosition) {
+    public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;
     }
 

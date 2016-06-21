@@ -1,6 +1,8 @@
 package com.example.baidu.oemequipmentsystem.util;
 
-import android.app.ActivityManager;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.app.Dialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -8,9 +10,15 @@ import android.os.Environment;
 import android.os.StatFs;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.example.baidu.oemequipmentsystem.R;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -142,42 +150,27 @@ public class BaseUtil {
     /**
      * 运行内存
      */
-    public static long getMemory(Context context) {
-        ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
-        ActivityManager mActivityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        mActivityManager.getMemoryInfo(mi);
-        long mTotalMem = 0;
-        String str1 = "/proc/meminfo";
+    public static long getMemory() {
+        String str1 = "/proc/meminfo";// 系统内存信息文件
         String str2;
         String[] arrayOfString;
+        long initial_memory = 0;
+        long memory=0;
         try {
             FileReader localFileReader = new FileReader(str1);
             BufferedReader localBufferedReader = new BufferedReader(localFileReader, 8192);
             str2 = localBufferedReader.readLine();
             arrayOfString = str2.split("\\s+");
-            mTotalMem = Integer.valueOf(arrayOfString[1]).intValue() * 1024;
+            initial_memory = Integer.valueOf(arrayOfString[1]).intValue() ;
             localBufferedReader.close();
+            memory = initial_memory / (1024 );
+            if (memory % 1024 > 512)
+                memory = memory / 1024 + 1;
+            else
+                memory = memory / 1024;
         } catch (IOException e) {
-            e.printStackTrace();
         }
-        long memory = mTotalMem / (1024 * 1024);
-        if (memory % 1024 > 512)
-            memory = memory / 1024 + 1;
-        else
-            memory = memory / 1024;
         return memory;
-    }
-
-    /**
-     * 存储空间（sd卡+机身内存）
-     */
-    public static long getTotalStorageSize() {
-        long storage = getTotalInternalStorageSize() / (1024 * 1024) + getTotalExternalStorageSize() / (1024 * 1024);
-        if (storage % 1024 > 512)
-            storage = storage / 1024 + 1;
-        else
-            storage = storage / 1024;
-        return storage;
     }
 
     /**
@@ -188,7 +181,13 @@ public class BaseUtil {
         StatFs stat = new StatFs(path.getPath());
         long blockSize = stat.getBlockSize();
         long totalBlocks = stat.getBlockCount();
-        return totalBlocks * blockSize;
+
+        long storage = totalBlocks * blockSize / (1024 * 1024);
+        if (storage % 1024 > 512)
+            storage = storage / 1024 + 1;
+        else
+            storage = storage / 1024;
+        return storage;
     }
 
     /**
@@ -220,6 +219,33 @@ public class BaseUtil {
             }
         }
         return false;
+    }
+
+    /**
+     * loading_dialog
+     */
+    public static Dialog createLoadingDialog(Context context,String content) {
+
+        int density=(int)context.getResources().getDisplayMetrics().density;
+
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view= inflater.inflate(R.layout.dialog_loading, null);
+        LinearLayout layout = (LinearLayout) view.findViewById(R.id.dialog_view);
+        ImageView imageView = (ImageView) view.findViewById(R.id.img_dialog_loading);
+        TextView textView=(TextView) view.findViewById(R.id.txt_dialog_loading);
+        textView.setText(content);
+
+        ObjectAnimator objectAnimator=ObjectAnimator.ofFloat(imageView,"rotation",0f,360f);
+        objectAnimator.setDuration(1000);
+        objectAnimator.setRepeatCount(ValueAnimator.INFINITE);
+        objectAnimator.start();
+
+
+        Dialog loadingDialog = new Dialog(context, R.style.oem_dialog_style);
+        loadingDialog.setCancelable(false);
+        loadingDialog.setContentView(layout, new LinearLayout.LayoutParams(260*density,190*density));
+        return loadingDialog;
+
     }
 
 }

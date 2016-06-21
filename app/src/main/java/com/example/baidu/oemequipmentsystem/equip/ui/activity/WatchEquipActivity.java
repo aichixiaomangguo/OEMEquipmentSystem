@@ -4,17 +4,22 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.baidu.oemequipmentsystem.R;
 import com.example.baidu.oemequipmentsystem.equip.model.Impl.EquipImpl;
 import com.example.baidu.oemequipmentsystem.equip.model.entity.EquipModel;
 import com.example.baidu.oemequipmentsystem.equip.model.entity.ManufacturerModel;
 import com.example.baidu.oemequipmentsystem.equip.model.entity.ResponsibleModel;
+import com.example.baidu.oemequipmentsystem.equip.model.listener.OnDeleteEquipInfoListener;
 import com.example.baidu.oemequipmentsystem.equip.model.listener.OnGetEquipInfoListener;
 import com.example.baidu.oemequipmentsystem.equip.ui.adapter.ExpandableListAdapter;
+import com.example.baidu.oemequipmentsystem.equip.ui.custom.DeleteConfirmDialog;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -35,6 +40,8 @@ public class WatchEquipActivity extends Activity implements SwipeRefreshLayout.O
     private List<EquipModel> otherList;
     private List<ResponsibleModel> responsibleModels;
     private List<ManufacturerModel> manufacturerModels;
+    private DeleteConfirmDialog deleteConfirmDialog;
+    private int deleteChildPosition,deleteGroupPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +75,38 @@ public class WatchEquipActivity extends Activity implements SwipeRefreshLayout.O
         img_watch_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(WatchEquipActivity.this, EquipActivity.class);
-                startActivity(intent);
+                finish();
+            }
+        });
+
+        deleteConfirmDialog=new DeleteConfirmDialog(this, R.style.oem_dialog_style, new DeleteConfirmDialog.DeleteChooseListener() {
+            @Override
+            public void deleteChoose(final boolean isDelete) {
+                if(isDelete){
+                    String imei="";
+                    if(deleteGroupPosition==0){
+                        imei=otherList.get(deleteChildPosition).getImei();
+                    }else
+                        imei=baiduList.get(deleteChildPosition).getImei();
+
+                    EquipImpl.getInstance().deleteEquipInfo(imei,new OnDeleteEquipInfoListener() {
+                        @Override
+                        public void deleteEquipInfoSuccess(String isSuccess) {
+                            if(isSuccess.equals("success")){
+                                Toast.makeText(WatchEquipActivity.this,"删除成功",Toast.LENGTH_SHORT).show();
+                                mSwipeLayout.post(new Runnable(){
+                                    @Override
+                                    public void run() {
+                                        mSwipeLayout.setRefreshing(true);
+                                    }
+                                });
+                                onRefresh();
+                            }
+                            else
+                                Toast.makeText(WatchEquipActivity.this,"删除失败",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
         });
 
@@ -117,6 +154,27 @@ public class WatchEquipActivity extends Activity implements SwipeRefreshLayout.O
             }
         });
 
+        expandableListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener()
+        {
+            public boolean onItemLongClick(AdapterView<?> parent, View childView, int flatPos, long id)
+            {
+                if (ExpandableListView.getPackedPositionType(id) == ExpandableListView.PACKED_POSITION_TYPE_CHILD)
+                {
+                    long packedPos = ((ExpandableListView) parent).getExpandableListPosition(flatPos);
+                    deleteGroupPosition = ExpandableListView.getPackedPositionGroup(packedPos);
+                    deleteChildPosition = ExpandableListView.getPackedPositionChild(packedPos);
+
+                    if(deleteChildPosition!=0){
+                        deleteConfirmDialog.show();
+                    }
+
+                    return true;
+                }
+                return false;
+            }
+
+        });
+
         mSwipeLayout= (SwipeRefreshLayout) findViewById(R.id.sl_watch_equip);
         mSwipeLayout.setOnRefreshListener(this);
     }
@@ -146,5 +204,13 @@ public class WatchEquipActivity extends Activity implements SwipeRefreshLayout.O
                 mSwipeLayout.setRefreshing(false);
             }
         });
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

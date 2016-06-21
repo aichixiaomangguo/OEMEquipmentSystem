@@ -29,6 +29,12 @@ public interface MTTApi {
     Call<BaseResponseModel> setEquipInfo(@Body BaseRequest request);
 
     /**
+     * 删除设备的基本信息
+     */
+    @POST("/DeviceManagerSys/DeviceInfo-deleteoneitem.php")
+    Call<BaseResponseModel> deleteEquipInfo(@Body BaseRequest request);
+
+    /**
      * 更改设备的信息(责任人/状态)
      */
     @POST("/DeviceManagerSys/DeviceInfo-alterresitem.php")

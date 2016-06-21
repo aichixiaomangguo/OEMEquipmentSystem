@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/colorPurple">
+        android:background="@color/colorMain">
 
         <ImageView
             android:id="@+id/img_detail_back"
@@ -26,275 +26,268 @@
             android:layout_centerInParent="true"
             android:text="设备详情"
             android:textColor="@color/colorWhite"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:background="@color/colorChildEven">
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
-                android:text="  IMEI  :"
+                android:text="IMEI         :"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/txt_detail_imei"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:text="2133454235235334235"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:background="@color/colorChildOdd">
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
-                android:text="  型号  :"
+                android:text="型号         :"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/txt_detail_model"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:text="HTC ONE X"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:background="@color/colorChildEven">
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
-                android:text="  系统  :"
+                android:text="系统         :"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/txt_detail_os"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:text="4.0.3"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:background="@color/colorChildOdd">
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
-                android:text="  CPU  :"
+                android:text="CPU         :"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/txt_detail_cpu"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:text="八核"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:singleLine="true"
+                android:textSize="17sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:background="@color/colorChildEven">
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
-                android:text="分辨率:"
+                android:text="分辨率     :"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/txt_detail_resolution"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:text="720*1080"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:background="@color/colorChildOdd">
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
-                android:text="运行内存:"
+                android:text="运行内存 :"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/txt_detail_memory"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:text="16GB"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
-                android:text="存储空间:"
+                android:text="存储空间 :"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/txt_detail_storage"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="15dp"
                 android:text="16GB"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:background="@color/colorChildEven">
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
-                android:text="责任人:"
+                android:text="责任人     :"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/txt_detail_responsible"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:text="张三"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:background="@color/colorChildOdd">
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
-                android:text="  来源  :"
+                android:text="来源         :"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/txt_detail_source"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:text="厂商"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/txt_detail_manufacturer"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="50dp"
-                android:text="厂商名:"
+                android:layout_marginLeft="30dp"
+                android:text="厂商名   :"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp"
-                android:visibility="gone"/>
+                android:textSize="17sp"
+               />
 
             <TextView
                 android:id="@+id/txt_detail_manufacturername"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="15dp"
                 android:text="小米"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp"
-                android:visibility="gone"/>
+                android:textSize="17sp"
+            />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:background="@color/colorChildEven">
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
-                android:text="  状态  :"
+                android:text="状态         :"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/txt_detail_state"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:text="未还"
                 android:textColor="@color/colorPurple"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
         </LinearLayout>
 
 
@@ -303,7 +296,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         android:gravity="center">
 
         <com.example.baidu.oemequipmentsystem.equip.ui.custom.SpinnerButton
@@ -353,7 +346,7 @@
         android:background="@drawable/btn_selector_main"
         android:text="提交"
         android:textColor="@color/colorWhite"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
 
 </LinearLayout>

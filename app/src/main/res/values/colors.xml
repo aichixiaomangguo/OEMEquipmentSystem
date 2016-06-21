@@ -5,12 +5,17 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorTextTitle">#333333</color>
-    <color name="colorClickable">#686872</color>
+    <color name="colorClickable">#C0C0C0</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorPurple">#142841</color>
     <color name="colorTextHint">#666666</color>
     <color name="colorTextAssist">#DDDDDD</color>
+
+
     <color name="colorChildFirst">#004d6a</color>
     <color name="colorChildOdd">#fff6e9</color>
-    <color name="colorChildEven">#ffd7aa</color>
+    <color name="colorChildEven">#e9f0ff</color>
+
+    <color name="colorMain">#0093aa</color>
+    <color name="colorHead">#007694</color>
 </resources>
